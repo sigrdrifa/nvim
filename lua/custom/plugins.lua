@@ -4,7 +4,11 @@ local overrides = require("custom.configs.overrides")
 local plugins = {
 
   -- Override plugin definition options
-
+  {
+  'mrcjkb/haskell-tools.nvim',
+  version = '^3', -- Recommended
+  lazy = false, -- This plugin is already lazy
+  },
   {
     "neovim/nvim-lspconfig",
     config = function()

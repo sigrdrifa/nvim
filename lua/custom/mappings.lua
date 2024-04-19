@@ -1,6 +1,8 @@
 ---@type MappingsTable
 local M = {}
 
+vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
+
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
