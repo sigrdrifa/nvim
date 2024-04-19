@@ -5,6 +5,9 @@ local plugins = {
 
   -- Override plugin definition options
   {
+  'luc-tielen/telescope_hoogle'
+  },
+  {
   'mrcjkb/haskell-tools.nvim',
   version = '^3', -- Recommended
   lazy = false, -- This plugin is already lazy
@@ -16,7 +19,17 @@ local plugins = {
       require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   },
-
+{
+  "nvim-neotest/neotest",
+  dependencies = {
+    "nvim-neotest/nvim-nio",
+    "nvim-lua/plenary.nvim",
+    "antoinemadec/FixCursorHold.nvim",
+    "nvim-treesitter/nvim-treesitter",
+    'mrcjkb/neotest-haskell',
+    "nvim-neotest/neotest-go",
+  }
+},
   -- override plugin configs
   {
     "williamboman/mason.nvim",

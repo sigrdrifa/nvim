@@ -1,7 +1,6 @@
 ---@type MappingsTable
 local M = {}
 
-vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
 
 M.general = {
   n = {
@@ -13,8 +12,13 @@ M.general = {
         require("conform").format()
       end,
       "formatting",
+    },
+    ["<leader>ca"] = {
+      function()
+        vim.lsp.buf.code_action({apply=true})
+      end,
+      "code action"
     }
-
   },
   v = {
     [">"] = { ">gv", "indent"},
